@@ -31,36 +31,4 @@ public sealed unsafe class ClickPurifyResult : ClickBase<ClickPurifyResult>
     /// Click the close button.
     /// </summary>
     public void Close() => this.FireCallback();
-
-    /*/// <summary>
-    /// Test Function.
-    /// </summary>
-    public void Close(params int[] test)
-    {
-        try
-        {
-            switch (test.Length)
-            {
-                case 1:
-                    this.FireCallback(test[0]);
-                    break;
-                case 2:
-                    this.FireCallback(test[0], test[1]);
-                    break;
-                case 3:
-                    this.FireCallback(test[0], test[1], test[2]);
-                    break;
-                case 4:
-                    this.FireCallback(test[0], test[1], test[2], test[3]);
-                    break;
-                default:
-                    this.FireCallback();
-                    break;
-            }
-
-        }
-        catch (Exception e)
-        {
-        }
-    }*/
 }
