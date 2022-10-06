@@ -39,12 +39,6 @@ public sealed unsafe class ClickLobbyDKTCheck : ClickBase<ClickJournalResult>
     public void SelectWorld()
     => this.FireCallback(0);
 
-    public void SelectWorldAlt()
-    {
-        PluginLog.LogDebug($"{((AtkUnitBase*)this.AddonAddress)->UldManager.NodeList[3]->GetComponent()->UldManager.NodeList[2]->GetAsAtkTextNode()->NodeText.ToString()}");
-        this.ClickAddonButton((AtkComponentButton*)((AtkUnitBase*)this.AddonAddress)->UldManager.NodeList[3]->GetComponent(), 2);
-    }
-
     /// <summary>
     /// Click the cancel button.
     /// </summary>
