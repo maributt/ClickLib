@@ -9,7 +9,7 @@ namespace ClickLib.Clicks;
 /// <summary>
 /// Addon RecipeNote.
 /// </summary>
-public sealed unsafe class ClickSynthesisSimpleDialog : ClickBase<ClickSynthesisSimpleDialog, AddonSynthesisSimpleDialog>
+public sealed unsafe class ClickSynthesisSimpleDialog : ClickBase<ClickSynthesisSimpleDialog>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ClickSynthesisSimpleDialog"/> class.

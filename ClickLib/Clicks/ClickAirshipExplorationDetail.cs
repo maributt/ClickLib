@@ -9,7 +9,7 @@ namespace ClickLib.Clicks;
 /// <summary>
 /// Addon Request.
 /// </summary>
-public sealed unsafe class ClickAirshipExplorationDetail : ClickBase<ClickAirshipExplorationDetail, AddonAirshipExplorationDetail>
+public sealed unsafe class ClickAirshipExplorationDetail : ClickBase<ClickAirshipExplorationDetail>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ClickAirshipExplorationDetail"/> class.

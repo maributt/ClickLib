@@ -12,7 +12,7 @@ namespace ClickLib.Clicks;
 /// <summary>
 /// Addon JournalResult.
 /// </summary>
-public sealed unsafe class ClickLobbyDKTCheck : ClickBase<ClickJournalResult, AddonLobbyDKTCheck>
+public sealed unsafe class ClickLobbyDKTCheck : ClickBase<ClickJournalResult>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ClickLobbyDKTCheck"/> class.
