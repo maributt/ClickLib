@@ -7,7 +7,7 @@ using FFXIVClientStructs.FFXIV.Client.UI;
 namespace ClickLib.Clicks;
 
 /// <summary>
-/// Addon MateriaRetrieveDialog.
+/// Addon MJIAnimalAutomatic.
 /// </summary>
 public sealed unsafe class ClickMJIAnimalAutomatic : ClickBase<ClickMJIAnimalAutomatic>
 {
@@ -32,6 +32,7 @@ public sealed unsafe class ClickMJIAnimalAutomatic : ClickBase<ClickMJIAnimalAut
     /// <summary>
     /// Click the begin button.
     /// </summary>
+    /// <param name="food">The ID of the food to start the caretaking services with.</param>
     public void CaretakingServiceStartWith(int food)
     {
             this.FireCallback(2, food, 0);

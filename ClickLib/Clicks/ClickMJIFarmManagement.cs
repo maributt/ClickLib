@@ -5,32 +5,32 @@ using ClickLib.Bases;
 namespace ClickLib.Clicks;
 
 /// <summary>
-/// Addon MJIAnimalManagement.
+/// Addon MJIFarmManagement.
 /// </summary>
-public sealed unsafe class ClickMJIAnimalManagement : ClickBase<ClickMJIAnimalManagement>
+public sealed unsafe class ClickMJIFarmManagement : ClickBase<ClickMJIFarmManagement>
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="ClickMJIAnimalManagement"/> class.
+    /// Initializes a new instance of the <see cref="ClickMJIFarmManagement"/> class.
     /// </summary>
     /// <param name="addon">Addon pointer.</param>
-    public ClickMJIAnimalManagement(IntPtr addon = default)
-        : base("MJIAnimalManagement", addon)
+    public ClickMJIFarmManagement(IntPtr addon = default)
+        : base("MJIFarmManagement", addon)
     {
     }
 
-    public static implicit operator ClickMJIAnimalManagement(IntPtr addon) => new(addon);
+    public static implicit operator ClickMJIFarmManagement(IntPtr addon) => new(addon);
 
     /// <summary>
     /// Instantiate this click using the given addon.
     /// </summary>
     /// <param name="addon">Addon to reference.</param>
     /// <returns>A click instance.</returns>
-    public static ClickMJIAnimalManagement Using(IntPtr addon) => new(addon);
+    public static ClickMJIFarmManagement Using(IntPtr addon) => new(addon);
 
     /// <summary>
     /// Click the begin button.
     /// </summary>
     /// <param name="atIndex">Item index on which to invoke the context menu callback.</param>
     public void InvokeContextMenu(int atIndex)
-        => this.FireCallback(0, atIndex, 0);
+        => this.FireCallback(0, atIndex);
 }
