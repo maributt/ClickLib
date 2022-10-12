@@ -76,7 +76,6 @@ public unsafe class ClickContextMenu : ClickBase<ClickContextMenu>
         if (this.listLength == 2 && this.MatchContextOptionAtIndex(1, "Collect Yield & Resume Gardening Services"))
         {
             this.FireCallback(0, 1, 0, 0, 0);
-            PluginLog.LogDebug("FireCallback");
         }
     }
 
@@ -92,13 +91,22 @@ public unsafe class ClickContextMenu : ClickBase<ClickContextMenu>
     /// <summary>
     /// Wrapper for the Island Sanctuary's MJIAnimalManagement addon's "Entrust to Caretaker" contenxt menu option.
     /// </summary>
-    public void IslandSanctuaryEntrustCaretaker()
+    /// <returns>Whether or not the click was sent under normal circumstances.</returns>
+    public bool IslandSanctuaryEntrustCaretaker()
     {
-        if (this.MatchContextOptionAtIndex(1, "Entrust to Caretaker"))
+        var clicked = this.MatchContextOptionAtIndex(1, "Entrust to Caretaker");
+        if (clicked)
             this.FireCallback(0, 1, 0, 0, 0);
+        return clicked;
     }
 
     #endregion
+
+    /// <summary>
+    /// Closes the context menu.
+    /// </summary>
+    public void Close()
+        => this.FireCallback(0, -1, 0, 0, 0);
 
     /// <summary>
     /// Click the context option at a given index if the text matches.
@@ -112,7 +120,9 @@ public unsafe class ClickContextMenu : ClickBase<ClickContextMenu>
         var listLength = listComponent->ListLength;
         var listItems = listComponent->ItemRendererList;
 
+#if DEBUG
         PluginLog.LogDebug($"listLength={listLength}\nfound=\"{listItems[index].AtkComponentListItemRenderer->AtkComponentButton.ButtonTextNode->NodeText.ToString()}\"\nexpected=\"{expectedText}\"");
+#endif
 
         if (listLength <= index)
             return false;
