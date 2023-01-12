@@ -3,14 +3,14 @@
   <PropertyGroup>
     <Authors>daemitus</Authors>
     <Company>-</Company>
-    <Version>1.1.0.3</Version>
+    <Version>1.2.0.1</Version>
     <Description></Description>
     <Copyright></Copyright>
     <PackageProjectUrl>https://github.com/daemitus/ClickLib</PackageProjectUrl>
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <Platforms>x64</Platforms>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
@@ -48,9 +48,8 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <!--<ProjectReference Include="..\..\..\lib\FFXIVClientStructs\FFXIVClientStructs\FFXIVClientStructs.csproj" />-->
-	  <Reference Include="FFXIVClientStructs" Private="False" />
     <Reference Include="Dalamud" Private="False" />
+    <Reference Include="FFXIVClientStructs" Private="False" />
   </ItemGroup>
 
 </Project>
