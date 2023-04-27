@@ -2,14 +2,14 @@
 
 using ClickLib.Attributes;
 using ClickLib.Bases;
-using FFXIVClientStructs.FFXIV.Client.UI;
+using FFXIVClientStructs.FFXIV.Component.GUI;
 
 namespace ClickLib.Clicks;
 
 /// <summary>
 /// Addon Request.
 /// </summary>
-public sealed unsafe class ClickAirshipExplorationDetail : ClickBase<ClickAirshipExplorationDetail>
+public sealed unsafe class ClickAirshipExplorationDetail : ClickBase<ClickAirshipExplorationDetail, AtkUnitBase>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ClickAirshipExplorationDetail"/> class.
@@ -32,27 +32,16 @@ public sealed unsafe class ClickAirshipExplorationDetail : ClickBase<ClickAirshi
     /// <summary>
     /// Click the deploy button.
     /// </summary>
+    /// <param name="button">Deploy button.</param>
     [ClickName("deploy")]
-    public void Deploy()
-        => this.FireCallback(0);
+    public void Deploy(AtkComponentButton* button)
+        => this.ClickAddonButton(button, 0);
 
     /// <summary>
     /// Click the cancel button.
     /// </summary>
+    /// <param name="button">Cancel button.</param>
     [ClickName("voyage_details_cancel")]
-    public void Cancel()
-        => this.FireCallback(-1);
-
-    /// <summary>
-    /// Click the close button.
-    /// </summary>
-    [ClickName("voyage_details_close")]
-    public void Close()
-        => this.FireCallback(-2);
-
-    /// <summary>
-    /// Click the finalize report button.
-    /// </summary>
-    public void SendCallback(int id)
-        => this.FireCallback(id);
+    public void Cancel(AtkComponentButton* button)
+        => this.ClickAddonButton(button, 1);
 }

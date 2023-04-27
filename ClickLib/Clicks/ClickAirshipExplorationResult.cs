@@ -3,13 +3,14 @@
 using ClickLib.Attributes;
 using ClickLib.Bases;
 using FFXIVClientStructs.FFXIV.Client.UI;
+using FFXIVClientStructs.FFXIV.Component.GUI;
 
 namespace ClickLib.Clicks;
 
 /// <summary>
 /// Addon Request.
 /// </summary>
-public sealed unsafe class ClickAirshipExplorationResult : ClickBase<ClickAirshipExplorationResult>
+public sealed unsafe class ClickAirshipExplorationResult : ClickBase<ClickAirshipExplorationResult, AtkUnitBase>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ClickAirshipExplorationResult"/> class.
@@ -32,27 +33,16 @@ public sealed unsafe class ClickAirshipExplorationResult : ClickBase<ClickAirshi
     /// <summary>
     /// Click the redeploy button.
     /// </summary>
+    /// <param name="button">Redeploy button.</param>
     [ClickName("redeploy")]
-    public void Redeploy()
-        => this.FireCallback(1);
+    public void Redeploy(AtkComponentButton* button)
+        => this.ClickAddonButton(button, 0);
 
     /// <summary>
     /// Click the finalize report button.
     /// </summary>
-    [ClickName("finalize_report")]
-    public void FinalizeReport()
-        => this.FireCallback(0);
-
-    /// <summary>
-    /// Click the finalize report button.
-    /// </summary>
-    [ClickName("voyage_results_close")]
-    public void Close()
-        => this.FireCallback(-1);
-
-    /// <summary>
-    /// Click the finalize report button.
-    /// </summary>
-    public void SendCallback(int id)
-        => this.FireCallback(id);
+    /// <param name="button">Finalize button.</param>
+    [ClickName("voyage_results_finalize_report")]
+    public void FinalizeReport(AtkComponentButton* button)
+        => this.ClickAddonButton(button, 1);
 }
